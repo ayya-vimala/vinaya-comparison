@@ -10,7 +10,7 @@ import requests
 import csv
 
 base_dir = os.environ['HOME']+'/vinaya-comparison/vinaya/'
-base_file = 'xct-mu-bu-pm'
+base_file = 'pli-tv-bi-pm'
 output_csv_file = os.environ['HOME']+'/vinaya-comparison/vinaya_output/'+base_file+'.csv'
 
 sortorder=['pli-tv-bi','pli-tv-bu','pli-tv-kd','lzh-mg-bi','lzh-mg-bu','san-mg-bi','san-mg-bu','san-lo-bi','san-lo-bu','lzh-mi-bi','lzh-mi-bu','lzh-dg-bi','lzh-dg-bu','pgd-dg-bi','pgd-dg-bu','lzh-sarv-bi','lzh-sarv-bu','san-sarv-bi','san-sarv-bu','san-sarv-sm','lzh-mu-bi','lzh-mu-bu','san-mu-bi','san-mu-bu','san-mu-kd','xct-mu-bi','xct-mu-bu','lzh-ka-bu','lzh-upp-bu','san-bu-pm','pgd-pm-bf13']
@@ -27,7 +27,8 @@ parallelwriter.writerow(['','','','','','','','','','','','','','','','','','','
 temp_list = []
 
 def sortlist(parallelentrylist):
-	newlist = ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']
+	newlist = ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']
+	parallelcount = -1
 	for item in parallelentrylist:
 		if item.startswith('san-mu-mpt-bu'):
 			sortcode = 'san-mu-bu'
@@ -49,6 +50,9 @@ def sortlist(parallelentrylist):
 				newlist[sortorder.index(sortcode)] += "; "+parallelcode
 			else:
 				newlist[sortorder.index(sortcode)] = parallelcode
+				parallelcount += 1
+
+	newlist[-1] = parallelcount
 
 	return(newlist)
 
