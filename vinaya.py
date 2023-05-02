@@ -10,7 +10,7 @@ import requests
 import csv
 
 base_dir = os.environ['HOME']+'/vinaya-comparison/vinaya/'
-base_file = 'san-lo-bi-vb'
+base_file = 'xct-mu-bi-pm'
 output_csv_file = os.environ['HOME']+'/vinaya-comparison/vinaya_output/'+base_file+'.csv'
 
 sortorder=['pli-tv-bi','pli-tv-bu','pli-tv-kd','lzh-mg-bi','lzh-mg-bu','san-mg-bi','san-mg-bu','san-lo-bi','san-lo-bu','lzh-mi-bi','lzh-mi-bu','lzh-dg-bi','lzh-dg-bu','pgd-dg-bi','pgd-dg-bu','lzh-sarv-bi','lzh-sarv-bu','san-sarv-bi','san-sarv-bu','san-sarv-sm','lzh-mu-bi','lzh-mu-bu','san-mu-bi','san-mu-bu','san-mu-kd','xct-mu-bi','xct-mu-bu','lzh-ka-bu','lzh-upp-bu','san-bu-pm','pgd-pm-bf13']
