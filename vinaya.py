@@ -59,8 +59,7 @@ def sortlist(parallelentrylist):
 for categories in filelist[base_file]:
 	for category in categories.values():
 		for file in category:
-			# print("https://suttacentral.net/api/parallels/"+file)
-			response = requests.get("https://suttacentral.net/api/parallels/"+file)
+			response = requests.get(suttacentral_api+file)
 			parallellist = response.json()[file]
 			parallelentrylist = [file]
 			for parallel in parallellist:
